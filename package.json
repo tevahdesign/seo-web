@@ -1,0 +1,10 @@
+{
+  "name": "tempmessage-static",
+  "version": "1.0.0",
+  "description": "Static TempMessage site - generated",
+  "scripts": {
+    "start": "npx http-server . -p 8080"
+  },
+  "author": "TempMessage Team",
+  "license": "MIT"
+}

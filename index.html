@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TempMessage — Temporary disposable email service</title>
+<meta name="description" content="Fast, minimalist temporary email (disposable inbox) service for quick verifications and privacy.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://tempmessage.com/">
+<style>
+/* Minimalist responsive CSS - critical styles only */
+:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.4}
+body{margin:0;background:#fff;color:#0b1220}
+.container{max-width:900px;margin:28px auto;padding:20px}
+.header{display:flex;align-items:center;gap:12px}
+.logo{font-weight:700;font-size:20px}
+.card{border:1px solid #eee;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(12,24,48,0.04)}
+.footer{font-size:13px;color:#666;margin-top:28px}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;border:1px solid #e5e7eb}
+.meta{color:#374151;font-size:14px}
+.faq dt{font-weight:600;margin-top:10px}
+</style>
+</head>
+<body>
+<main class="container">
+  <header class="header">
+    <div class="logo">TempMessage</div>
+    <div class="meta">Fast disposable emails for quick verifications</div>
+  </header>
+  <section class="card" style="margin-top:18px">
+    <h1>Generate a temporary email instantly</h1>
+    <p>Use a disposable email to sign up for websites or protect your privacy. No signup required.</p>
+    <div id="email" class="card meta" style="margin-top:12px">loading...</div>
+    <p style="margin-top:12px"><a class="btn" href="/pages/temp-email-for-facebook.html">Try a popular temp email page</a></p>
+  </section>
+
+  <section class="card" style="margin-top:18px">
+    <h2>Popular uses</h2>
+    <ul>
+      <li><a href="/pages/temp-email-for-facebook.html">Temp email for facebook</a></li>
+      <li><a href="/pages/disposable-email-for-instagram.html">Disposable email for instagram</a></li>
+      <li><a href="/pages/temporary-email-for-gmail.html">Temporary email for gmail</a></li>
+      <li><a href="/pages/throwaway-email-for-yahoo.html">Throwaway email for yahoo</a></li>
+      <li><a href="/pages/fake-email-for-outlook.html">Fake email for outlook</a></li>
+      <li><a href="/pages/burner-email-for-twitter.html">Burner email for twitter</a></li>
+      <li><a href="/pages/temporary-inbox-for-linkedin.html">Temporary inbox for linkedin</a></li>
+      <li><a href="/pages/disposable-inbox-for-telegram.html">Disposable inbox for telegram</a></li>
+      <li><a href="/pages/whatsapp-temp-email.html">Whatsapp temp email</a></li>
+      <li><a href="/pages/snapchat-disposable-email.html">Snapchat disposable email</a></li>
+      <li><a href="/pages/netflix-temporary-email.html">Netflix temporary email</a></li>
+      <li><a href="/pages/youtube-throwaway-email.html">Youtube throwaway email</a></li>
+    </ul>
+  </section>
+
+  <section class="card faq" style="margin-top:18px">
+    <h2>FAQ</h2>
+    <dl>
+      <dt>How long do temporary emails last?</dt>
+      <dd>Inbox duration may vary — this depends on backend policy. Use for quick verification and short-term tasks.</dd>
+      <dt>Are temp emails private?</dt>
+      <dd>They provide more privacy than your personal email but are not a replacement for secure, private accounts for sensitive uses.</dd>
+    </dl>
+  </section>
+
+  <footer class="footer">
+    © {datetime.utcnow().year} {site_meta['site_name']} — Minimal, fast, and privacy-focused.
+  </footer>
+</main>
+<script>{js}</script>
+</body>
+</html>

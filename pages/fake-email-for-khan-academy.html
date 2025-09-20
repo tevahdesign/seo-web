@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fake Email For Khan Academy — TempMessage</title>
+<meta name="description" content="Use a temporary email for fake email for khan academy. Fast disposable inbox for quick verification and privacy.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://tempmessage.com/pages/fake-email-for-khan-academy.html">
+<style>
+/* Minimalist responsive CSS - critical styles only */
+:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.4}
+body{margin:0;background:#fff;color:#0b1220}
+.container{max-width:900px;margin:28px auto;padding:20px}
+.header{display:flex;align-items:center;gap:12px}
+.logo{font-weight:700;font-size:20px}
+.card{border:1px solid #eee;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(12,24,48,0.04)}
+.footer{font-size:13px;color:#666;margin-top:28px}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;border:1px solid #e5e7eb}
+.meta{color:#374151;font-size:14px}
+.faq dt{font-weight:600;margin-top:10px}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Fake Email For Khan Academy",
+  "url":"https://tempmessage.com/pages/fake-email-for-khan-academy.html",
+  "description":"Use a temporary email for fake email for khan academy. Fast disposable inbox for quick verification and privacy."
+}
+</script>
+</head>
+<body>
+<main class="container">
+  <header class="header">
+    <div class="logo">TempMessage</div>
+    <div class="meta">Disposable email for fake email for khan academy</div>
+  </header>
+
+  <article class="card" style="margin-top:18px">
+    <h1>Fake Email For Khan Academy</h1>
+    <p>Use a temporary email for fake email for khan academy. Fast disposable inbox for quick verification and privacy.</p>
+    <p><strong>How to use:</strong> Copy the disposable address and paste it into the verification form of the service. Check this page's inbox to read the verification email.</p>
+
+    <section style="margin-top:12px">
+      <h2>Quick actions</h2>
+      <p id="email">Loading temporary address...</p>
+      <p><a class="btn" href="/">Back to home</a></p>
+    </section>
+
+    <section style="margin-top:12px">
+      <h2>Why use a disposable email for fake email for khan academy?</h2>
+      <ul>
+        <li>Protect your personal inbox from spam</li>
+        <li>Quick sign-ups without long-term commitment</li>
+        <li>Good for testing and one-off verifications</li>
+      </ul>
+    </section>
+
+    <section style="margin-top:12px" class="faq">
+      <h3>Common questions</h3>
+      <dl>
+        <dt>Is this email permanent?</dt><dd>No — disposable addresses are temporary and may expire.</dd>
+        <dt>Can others see messages?</dt><dd>Inbox is public by default on many services; do not use for sensitive information.</dd>
+      </dl>
+    </section>
+  </article>
+
+  <footer class="footer">© 2025 TempMessage</footer>
+</main>
+<script>
+async function fetchTempEmail() {
+  try {
+    const r = await fetch('https://api.guerrillamail.com/ajax.php?f=get_email_address'); // public example endpoint
+    const data = await r.json();
+    document.getElementById('email').textContent = data.email_addr || 'no-email';
+  } catch (e) {
+    document.getElementById('email').textContent = 'error fetching email';
+  }
+}
+document.addEventListener('DOMContentLoaded', fetchTempEmail);
+</script>
+</body>
+</html>
