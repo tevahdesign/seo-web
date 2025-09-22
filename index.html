@@ -19,7 +19,23 @@ body{margin:0;background:#fff;color:#0b1220}
 .meta{color:#374151;font-size:14px}
 .faq dt{font-weight:600;margin-top:10px}
 </style>
+<script>
+(async function() {
+  try {
+    // Free API for IP Geolocation (replace with your own if needed)
+    const res = await fetch("https://ipapi.co/json/");
+    const data = await res.json();
 
+    if (data.country_code === "SG") {
+      document.body.innerHTML = "<h1>Access Denied 🚫</h1><p>Traffic from Singapore is blocked.</p>";
+      throw new Error("Blocked visitor from Singapore");
+    }
+  } catch (e) {
+    console.error("Geo check failed", e);
+  }
+})();
+</script>
+     
 <!-- Script 1: Analytics -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2885050972904135"
      crossorigin="anonymous"></script>
