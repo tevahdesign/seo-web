@@ -242,9 +242,97 @@ simulatePageviews();
 </script>
 console.log("Script 6 loaded: Ads + main JS init");
 </script>
-  <div id="pages"></div>
+
   
 </body>
 </html>
 
-      
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TempMessege Keyword Simulation</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  #pages { max-height: 90vh; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; }
+  .page { border-bottom: 1px solid #ddd; margin-bottom: 10px; padding: 10px; }
+</style>
+</head>
+<body>
+
+<h1>3000+ Temp Mail Keyword Pages Simulation</h1>
+<div id="pages"></div>
+
+<script>
+// ----- Configuration -----
+const countries = ["US", "DE"];
+const totalPages = 1000; // number of pages
+
+// ----- Generate Random Title -----
+
+function generateTitle(country) {
+    // Top temporary email keywords for high traffic
+    const topicsUS = [
+        "Temporary Email", "Disposable Email", "Fake Email Address", "Temp Inbox",
+        "Throwaway Email", "Anonymous Email", "Ephemeral Email", "One-Time Email",
+        "Free Temp Mail", "Quick Email", "Mailinator Alternative", "Secure Temp Email"
+    ];
+    const topicsDE = [
+        "Temporäre E-Mail", "Wegwerf-E-Mail", "Gefälschte E-Mail-Adresse", "Temp-Postfach",
+        "Einweg-E-Mail", "Anonyme E-Mail", "Kurzlebige E-Mail", "Einmal-E-Mail",
+        "Kostenlose Temp-Mail", "Schnelle E-Mail", "Mailinator Alternative", "Sichere Temp-Mail"
+    ];
+
+    const topics = country === "DE" ? topicsDE : topicsUS;
+    const topic = topics[Math.floor(Math.random() * topics.length)];
+    return `${topic} - ${new Date().getFullYear()} ${country}`;
+}
+
+// ----- Generate Page Content -----
+function generatePageContent(title, country, index) {
+    return `
+      <div class="page" id="page-${index}">
+        <h2>${title}</h2>
+        <p>Country: <strong>${country}</strong></p>
+        <p>Page index: ${index + 1}</p>
+      </div>
+    `;
+}
+
+// ----- Render Pages Dynamically -----
+const container = document.getElementById("pages");
+let current = 0;
+
+function renderChunk(chunkSize = 50) {
+    for (let i = 0; i < chunkSize && current < totalPages; i++, current++) {
+        const country = countries[Math.floor(Math.random() * countries.length)];
+        const title = generateTitle(country);
+        container.innerHTML += generatePageContent(title, country, current);
+    }
+    if (current < totalPages) {
+        setTimeout(() => renderChunk(chunkSize), 50); // next chunk
+    } else {
+        console.log("All pages generated!");
+    }
+}
+
+// Start rendering
+renderChunk();
+
+// ----- Simulate Pageviews -----
+function simulatePageviews() {
+    for (let i = 0; i < totalPages; i++) {
+        setTimeout(() => {
+            const country = document.querySelector(`#page-${i} strong`).innerText;
+            console.log(`Simulated pageview: Page ${i + 1}, Country: ${country}`);
+        }, i * 10);
+    }
+}
+
+simulatePageviews();
+</script>
+
+
+</body>
+</html>
+
