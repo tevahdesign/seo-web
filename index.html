@@ -174,3 +174,102 @@ console.log("Script 6 loaded: Ads + main JS init");
 </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Programmatic Page Simulation 1000+</title>
+<style>
+  body { font-family: Arial; margin: 20px; }
+  .page { margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; }
+  #pages { max-height: 90vh; overflow-y: scroll; }
+</style>
+</head>
+<body>
+
+<h1>Simulated 1000+ Pages (US & Germany)</h1>
+<div id="pages"></div>
+
+<script>
+// ----- Configuration -----
+const countries = ["US", "DE"];
+const totalPages = 1000; // generate 1000+ pages
+const topicsUS = ["Best Headphones", "Top Laptops", "Budget Smartphones", "Gaming Gear"];
+const topicsDE = ["Beste Kopfhörer", "Top Laptops", "Günstige Smartphones", "Gaming Zubehör"];
+
+// ----- Generate Random Page Title -----
+function generateTitle(country) {
+    const topics = country === "DE" ? topicsDE : topicsUS;
+    const topic = topics[Math.floor(Math.random() * topics.length)];
+    const year = new Date().getFullYear();
+    return `${topic} - ${year} ${country}`;
+}
+
+// ----- Generate Page Content -----
+function generatePageContent(title, country, index) {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "author": "Educational Simulation",
+        "datePublished": new Date().toISOString(),
+        "publisher": {
+            "@type": "Organization",
+            "name": "EduSim"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://tempmessege.com/page/${index}`
+        },
+        "about": country
+    };
+
+    return `
+      <div class="page" id="page-${index}">
+        <h2>${title}</h2>
+        <p>Country: <strong>${country}</strong></p>
+        <p>Page index: ${index + 1}</p>
+        <script type="application/ld+json">
+          ${JSON.stringify(jsonLd)}
+        </script>
+      </div>
+    `;
+}
+
+// ----- Render Pages Dynamically -----
+const container = document.getElementById("pages");
+
+// Chunk rendering to avoid browser freeze
+let current = 0;
+function renderChunk(chunkSize = 50) {
+    for (let i = 0; i < chunkSize && current < totalPages; i++, current++) {
+        const country = countries[Math.floor(Math.random() * countries.length)];
+        const title = generateTitle(country);
+        container.innerHTML += generatePageContent(title, country, current);
+    }
+    if (current < totalPages) {
+        setTimeout(() => renderChunk(chunkSize), 50); // next chunk
+    } else {
+        console.log("All pages generated!");
+    }
+}
+
+// Start rendering
+renderChunk();
+
+// ----- Simulate Pageviews -----
+function simulatePageviews() {
+    for (let i = 0; i < totalPages; i++) {
+        setTimeout(() => {
+            const country = document.querySelector(`#page-${i} strong`).innerText;
+            console.log(`Simulated pageview: Page ${i + 1}, Country: ${country}`);
+        }, i * 10);
+    }
+}
+
+simulatePageviews();
+</script>
+
+</body>
+    </html>
+      
